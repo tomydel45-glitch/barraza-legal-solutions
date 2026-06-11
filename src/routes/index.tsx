@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useId } from "react";
 import { ShieldCheck, Timer, MessageSquare, CheckCircle2, History, Target, Scale } from "lucide-react";
 import logoAsset from "@/assets/Logosolo.jpg";
 import heroImg from "@/assets/hero-law.jpg";
@@ -74,7 +74,7 @@ function Header() {
             <p className="text-[11px] tracking-[0.18em] text-muted-foreground ">& Asociados</p>
           </div>
         </a>
-        <nav className="hidden items-center gap-8 text-sm text-navy md:flex">
+        <nav className="hidden items-center gap-8 text-sm text-navy-deep font-semibold md:flex">
           <a href="#nosotros" className="transition-colors hover:text-gold">El Estudio</a>
           <a href="#VerServicios" className="transition-colors hover:text-gold">Áreas</a>
           <a href="#pasos" className="transition-colors hover:text-gold">Proceso</a>
@@ -83,13 +83,13 @@ function Header() {
         <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="hidden rounded-sm border border-navy bg-navy px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-primary-foreground transition hover:bg-navy-deep md:inline-block">
           Consulta
         </a>
-        <button aria-label="Menú" className="text-navy md:hidden hover:text-gold active:scale-95 transition-all" onClick={() => setOpen(!open)}>
+        <button aria-label="Menú" className="text-navy-deep md:hidden hover:text-gold active:scale-95 transition-all" onClick={() => setOpen(!open)}>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
         </button>
       </div>
       {open && (
         <div className="border-t border-border bg-background md:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-5 text-navy text-sm font-medium">
+          <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-5 text-navy-deep text-sm font-semibold">
             <a href="#nosotros" className="border-b border-border/40 pb-2 transition-colors hover:text-gold active:text-gold/85" onClick={() => setOpen(false)}>El Estudio</a>
             <a href="#VerServicios" className="border-b border-border/40 pb-2 transition-colors hover:text-gold active:text-gold/85" onClick={() => setOpen(false)}>Áreas de Práctica</a>
             <a href="#pasos" className="border-b border-border/40 pb-2 transition-colors hover:text-gold active:text-gold/85" onClick={() => setOpen(false)}>Proceso</a>
@@ -105,11 +105,11 @@ function Header() {
 function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-navy-deep text-bone">
-      <img src={heroImg} alt="Justicia, libros y mazo" width={1920} height={1080} className="absolute inset-0 h-full w-full object-cover opacity-35" />
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-deep/85 to-navy-deep/40" />
+      <img src={heroImg} alt="Justicia, libros y mazo" width={1920} height={1080} className="absolute inset-0 h-full w-full object-cover opacity-20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-deep/90 to-navy-deep/70" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-24 lg:grid-cols-12 lg:gap-16 lg:px-10 lg:py-36">
         <div className="lg:col-span-8">
-          <p className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-gold">
+          <p className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-gold font-semibold">
             <span className="h-px w-10 bg-gold" />
             Civil · Comercial · Laboral · Familia · Daños y Perjuicios
           </p>
@@ -152,9 +152,9 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative border-y border-white/10 bg-navy-deep/80 backdrop-blur-sm">
+      <div className="relative border-y border-white/10 bg-navy-deep">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-5 py-4 text-center lg:px-10">
-          <span className="text-xs uppercase tracking-[0.25em] text-gold">Zona de actuación</span>
+          <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold">Zona de actuación</span>
           <span className="hidden h-4 w-px bg-white/20 sm:inline-block" />
           <span className="text-sm font-medium text-white/90 sm:text-base">
             Mar del Plata <span className="mx-2 text-gold">·</span>
@@ -184,7 +184,7 @@ function Nosotros() {
         </div>
 
         <div className="lg:col-span-7">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold">El Estudio</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-navy-deep font-semibold">El Estudio</p>
           <h2 className="gold-rule mt-3 font-display text-4xl leading-tight text-navy-deep lg:text-5xl">
             Tu solución legal comienza aquí.
           </h2>
@@ -286,10 +286,10 @@ function Servicios() {
         <div className="mt-14 grid gap-px overflow-hidden bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
             <article key={s.title} className="group relative bg-navy-deep p-7 transition-colors hover:bg-navy active:bg-navy">
-              <p className="font-display text-5xl text-gold/30">{String(i + 1).padStart(2, "0")}</p>
+              <p className="font-display text-5xl text-gold/70">{String(i + 1).padStart(2, "0")}</p>
               <h3 className="mt-3 font-display text-2xl text-white">{s.title}</h3>
               <div className="mt-3 h-px w-10 bg-gold" />
-              <p className="mt-4 text-sm leading-relaxed text-white/75">{s.items}</p>
+              <p className="mt-4 text-sm leading-relaxed text-white/90">{s.items}</p>
             </article>
           ))}
         </div>
@@ -304,7 +304,7 @@ function Pasos() {
       <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">Cómo trabajamos</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-navy-deep font-semibold">Cómo trabajamos</p>
             <h2 className="gold-rule mt-3 font-display text-4xl leading-tight text-navy-deep lg:text-5xl">
               Paso a paso de tu trámite.
             </h2>
@@ -315,10 +315,10 @@ function Pasos() {
           <ol className="space-y-6 lg:col-span-8">
             {steps.map((s) => (
               <li key={s.n} className="group flex gap-6 border-l-3 border-navy/20 bg-background p-6 shadow-soft transition-all duration-300 hover:translate-x-2 hover:border-gold hover:shadow-md hover:bg-white active:translate-x-2 active:border-gold active:shadow-md active:bg-white">
-                <span className="font-display text-4xl text-gold/60 group-hover:text-gold group-active:text-gold transition-all duration-300 transform group-hover:scale-110 group-active:scale-110">{s.n}</span>
+                <span className="font-display text-4xl text-gold-dark group-hover:text-gold-dark group-active:text-gold-dark transition-all duration-300 transform group-hover:scale-110 group-active:scale-110">{s.n}</span>
                 <div>
                   <h3 className="font-display text-xl text-navy-deep group-hover:text-navy group-active:text-navy transition-colors duration-300">{s.title}</h3>
-                  <p className="mt-1 text-sm text-foreground/70">{s.text}</p>
+                  <p className="mt-1 text-sm text-foreground/85">{s.text}</p>
                 </div>
               </li>
             ))}
@@ -331,6 +331,7 @@ function Pasos() {
 
 function Contacto() {
   const [form, setForm] = useState({ nombre: "", apellido: "", telefono: "", consulta: "" });
+  const consultaId = useId();
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Hola, soy ${form.nombre} ${form.apellido}.%0ATeléfono: ${form.telefono}%0AConsulta: ${form.consulta}`;
@@ -342,7 +343,7 @@ function Contacto() {
         <div className="lg:col-span-5">
           <div className="relative h-full overflow-hidden rounded-sm border border-navy/15 bg-secondary/30 p-8 text-navy-deep shadow-soft lg:p-10">
             <div className="absolute left-0 top-0 h-full w-1 bg-navy" />
-            <p className="text-xs uppercase tracking-[0.3em] text-navy">Contacto</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-navy-deep font-semibold">Contacto</p>
             <h2 className="mt-3 font-display text-4xl leading-tight text-navy-deep lg:text-5xl">
               Conversemos sobre tu caso.
             </h2>
@@ -353,18 +354,18 @@ function Contacto() {
             <ul className="mt-10 space-y-4">
               <li className="group relative rounded-sm border-l-2 border-navy/25 pl-4 py-2 pr-4 transition-all duration-300 hover:border-navy hover:bg-navy/5 hover:translate-x-1">
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="block">
-                  <p className="text-xs uppercase tracking-[0.2em] text-navy/70 group-hover:text-navy transition-colors duration-300">Teléfono / WhatsApp</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-navy-deep font-semibold transition-colors duration-300">Teléfono / WhatsApp</p>
                   <p className="font-display text-2xl text-navy-deep mt-1 transition-colors duration-300 group-hover:text-navy-soft">2262-477807</p>
                 </a>
               </li>
               <li className="group relative rounded-sm border-l-2 border-navy/25 pl-4 py-2 pr-4 transition-all duration-300 hover:border-navy hover:bg-navy/5 hover:translate-x-1">
                 <a href="mailto:marbarraza@gmail.com" className="block">
-                  <p className="text-xs uppercase tracking-[0.2em] text-navy/70 group-hover:text-navy transition-colors duration-300">Email</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-navy-deep font-semibold transition-colors duration-300">Email</p>
                   <p className="font-display text-xl text-navy-deep mt-1 transition-colors duration-300 group-hover:text-navy-soft break-all">marbarraza@gmail.com</p>
                 </a>
               </li>
               <li className="relative rounded-sm border-l-2 border-navy/25 pl-4 py-2 pr-4 transition-all duration-300">
-                <p className="text-xs uppercase tracking-[0.2em] text-navy/70">Zona de actuación</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-navy-deep font-semibold">Zona de actuación</p>
                 <p className="mt-1 text-sm text-foreground/80">Mar del Plata · Tandil · Necochea · Costa Atlántica</p>
               </li>
             </ul>
@@ -378,8 +379,8 @@ function Contacto() {
           </div>
           <Field label="Teléfono" type="tel" value={form.telefono} onChange={(v) => setForm({ ...form, telefono: v })} />
           <div>
-            <label className="text-xs uppercase tracking-[0.2em] text-navy">Breve descripción de la consulta</label>
-            <textarea required maxLength={1000} rows={5} value={form.consulta} onChange={(e) => setForm({ ...form, consulta: e.target.value })} className="mt-2 w-full border border-input bg-background px-4 py-3 text-foreground outline-none focus:border-navy" />
+            <label htmlFor={consultaId} className="text-xs uppercase tracking-[0.2em] text-navy-deep font-semibold">Breve descripción de la consulta</label>
+            <textarea id={consultaId} required maxLength={1000} rows={5} value={form.consulta} onChange={(e) => setForm({ ...form, consulta: e.target.value })} className="mt-2 w-full border border-input bg-background px-4 py-3 text-foreground outline-none focus:border-navy" />
           </div>
           <button type="submit" className="w-full rounded-sm bg-navy-deep px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary-foreground transition hover:bg-navy">
             Enviar consulta por WhatsApp
@@ -391,10 +392,11 @@ function Contacto() {
 }
 
 function Field({ label, value, onChange, type = "text" }: { label: string; value: string; onChange: (v: string) => void; type?: string }) {
+  const id = useId();
   return (
     <div>
-      <label className="text-xs uppercase tracking-[0.2em] text-navy">{label}</label>
-      <input required type={type} maxLength={120} value={value} onChange={(e) => onChange(e.target.value)} className="mt-2 w-full border border-input bg-background px-4 py-3 text-foreground outline-none focus:border-navy" />
+      <label htmlFor={id} className="text-xs uppercase tracking-[0.2em] text-navy-deep font-semibold">{label}</label>
+      <input id={id} required type={type} maxLength={120} value={value} onChange={(e) => onChange(e.target.value)} className="mt-2 w-full border border-input bg-background px-4 py-3 text-foreground outline-none focus:border-navy" />
     </div>
   );
 }
