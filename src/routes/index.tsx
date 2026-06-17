@@ -23,11 +23,11 @@ const INSTAGRAM = "https://instagram.com/estudiojuridicobarraza";
 const services = [
   { title: "Derecho Civil", items: "Sucesiones de inmuebles rurales y urbanos. Sucesiones Testamentarias. Declaratorias de Herederos. Usucapiones. Desalojos. Escrituraciones. Contratos. Boletos de compraventa." },
   { title: "Derecho Comercial", items: "Asesoramiento a Pymes. Conflictos entre socios. Contratos comerciales y bancarios. Ejecución y cobro de deudas comerciales." },
-  { title: "Derecho Agropecuario", items: "Sucesiones de campos, maquinaria agrícola y ganado. Asesoramiento a empresas agropecuarias familiares. Contratos rurales. Conflictos de vecindad. Fumigaciones. Cobro de deudas." },
-  { title: "Derecho de Familia", items: "Divorcios de común acuerdo o conflictivos. Uniones convivenciales. Liquidación y partición de bienes del matrimonio. Filiación e impugnación. Alimentos. Régimen de comunicación." },
+  { title: "Derecho Agropecuario", items: "Sucesiones de campos, maquinaria agrícola y ganado. Asesoramiento a empresas agropecuarias familiares. Contratos rurales. Conflictos de vecindad. Conflictos de administración rural. Cobro de deudas." },
+  { title: "Derecho de Familia", items: "Divorcios de común acuerdo o conflictivos. Uniones convivenciales (concubinatos). Liquidación y partición de bienes del matrimonio. Filiación e impugnación. Alimentos. Régimen de comunicación (régimen de visitas)." },
   { title: "Daños y Perjuicios", items: "Accidentes de tránsito. Daños patrimoniales y lucro cesante. Lesiones físicas. Mala praxis médica. Reclamo ante aseguradoras. Daños derivados de contratos." },
   { title: "ART", items: "Accidentes de trabajo y enfermedades profesionales. Reclamos ante ART. Rechazos. Expedientes ante Comisiones Médicas. Determinación de incapacidad. Indemnizaciones." },
-  { title: "Reclamos Laborales", items: "Liquidaciones laborales. Reclamo de indemnizaciones. Acuerdos. Telegramas." },
+  { title: "Reclamos Laborales", items: "Liquidaciones laborales. Reclamo de indemnizaciones. Acuerdos. Telegramas. Juicios laborales." },
   { title: "Derecho Inmobiliario", items: "Contratos de locación. Reajuste de cláusulas. Comodatos. Compraventas. Boletos. Cesiones." },
 ];
 
@@ -114,7 +114,7 @@ function Hero() {
             Civil · Comercial · Laboral · Familia · Daños y Perjuicios
           </p>
           <h1 className="font-display text-4xl leading-[1.05] text-white sm:text-5xl lg:text-[64px]">
-            ¿Tenés un asunto legal que resolver en el Sudeste bonaerense?
+            ¿Necesitás asesoramiento o tenés que resolver un conflicto legal?
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/85">
             No dejes pasar tu tiempo. Poné tu caso en manos de un Estudio Jurídico con
@@ -141,7 +141,7 @@ function Hero() {
             {[
               { k: "+20", v: "años de trayectoria" },
               { k: "Ágil", v: "Gestión legal confiable de tu caso" },
-              { k: "Directa", v: "Atención y resolución rápida del conflicto" },
+              { k: "Directa", v: "Atención personalizada y resolución del conflicto" },
             ].map((b) => (
               <li key={b.v}>
                 <p className="font-display text-3xl text-gold">{b.k}</p>
@@ -161,7 +161,7 @@ function Hero() {
             Tandil <span className="mx-2 text-gold">·</span>
             Necochea <span className="mx-2 text-gold">·</span>
             Lobería <span className="mx-2 text-gold">·</span>
-            Costa Atlántica
+            Balcarce
           </span>
         </div>
       </div>
@@ -189,7 +189,7 @@ function Nosotros() {
             Tu solución legal comienza aquí.
           </h2>
           <p className="mt-8 text-lg leading-relaxed text-foreground/80">
-            Brindamos soluciones legales dinámicas y transparentes en Civil, Comercial, Inmobiliario, Familia y Laboral. Con más de 20 años de experiencia en el Sudeste bonaerense, hacemos que cada trámite avance con seguridad y resultados.
+            Brindamos soluciones legales dinámicas y transparentes en Civil, Comercial, Inmobiliario, Familia y Laboral. Con más de 20 años de experiencia en las principales ramas del derecho, hacemos que cada trámite avance con seguridad y resultados.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
