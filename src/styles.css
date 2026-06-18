@@ -36,8 +36,8 @@
   --color-ink: var(--ink);
   --color-bone: var(--bone);
   --color-whatsapp: var(--whatsapp);
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: var(--font-display), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
   --shadow-elegant: 0 30px 60px -20px color-mix(in oklab, var(--navy-deep) 45%, transparent);
   --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--navy-deep) 25%, transparent);
 }

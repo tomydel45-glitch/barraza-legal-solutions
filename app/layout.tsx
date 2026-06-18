@@ -1,6 +1,21 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "../src/styles.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title:
@@ -29,7 +44,7 @@ export const metadata: Metadata = {
     "abogado usucapion mar del plata",
     "abogado Sucesiones Loberia",
     "abogado Sucesiones Balcarce",
-    "abogado desalojos mar del plata",
+    "abogado desalojos mar del plata"
   ],
   openGraph: {
     title: "Estudio Jurídico Barraza & Asociados",
@@ -44,15 +59,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-        />
-      </head>
+    <html lang="es" className={`${cormorant.variable} ${inter.variable} scroll-smooth`}>
       <body>{children}</body>
     </html>
   );

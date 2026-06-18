@@ -12,6 +12,7 @@ export default function Hero() {
         height={1080}
         className="absolute inset-0 h-full w-full object-cover opacity-20"
         priority
+        fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-deep/90 to-navy-deep/70" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-24 lg:grid-cols-12 lg:gap-16 lg:px-10 lg:py-36">

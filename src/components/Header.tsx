@@ -14,7 +14,7 @@ export default function Header() {
           <Image
             src="/Logosolo.jpg"
             alt="Estudio Jurídico Barraza"
-            className="h-12 w-auto object-contain"
+            className="h-12 w-12 object-contain"
             width={48}
             height={48}
             priority
