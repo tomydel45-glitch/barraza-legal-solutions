@@ -82,8 +82,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Estudio Jurídico Barraza & Asociados",
-    description:
-      "Más de 20 años de trayectoria en derecho Civil, Comercial, Laboral y Familia.",
+    description: "Más de 20 años de trayectoria en derecho Civil, Comercial, Laboral y Familia.",
     images: ["/og-image.jpg"],
   },
   other: {
@@ -122,10 +121,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="es"
-      className={`${cormorant.variable} ${inter.variable} scroll-smooth`}
-    >
+    <html lang="es" className={`${cormorant.variable} ${inter.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"
