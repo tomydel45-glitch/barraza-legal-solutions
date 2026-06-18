@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "abogado usucapion mar del plata",
     "abogado Sucesiones Loberia",
     "abogado Sucesiones Balcarce",
-    "abogado desalojos mar del plata"
+    "abogado desalojos mar del plata",
   ],
   openGraph: {
     title: "Estudio Jurídico Barraza & Asociados",
