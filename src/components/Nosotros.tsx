@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   ShieldCheck,
@@ -33,19 +36,40 @@ const values = [
 ];
 
 export default function Nosotros() {
+  const [showFirst, setShowFirst] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowFirst((prev) => !prev);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="nosotros" className="bg-background py-24 lg:py-32">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-12 lg:gap-16 lg:px-10">
         <div className="lg:col-span-5">
           <div className="relative">
             <div className="absolute -left-4 -top-4 hidden h-full w-full border border-gold/60 lg:block" />
-            <Image
-              src="/lawyer-portrait.jpg"
-              alt="Dr. Mariano Barraza"
-              width={1024}
-              height={1024}
-              className="relative aspect-[4/5] w-full object-cover shadow-elegant"
-            />
+            {/* Crossfade container */}
+            <div className="relative aspect-[4/5] w-full shadow-elegant">
+              <Image
+                src="/foto1.jpeg"
+                alt="Dr. Mariano Barraza"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover transition-opacity duration-1000 ease-in-out"
+                style={{ opacity: showFirst ? 1 : 0 }}
+              />
+              <Image
+                src="/foto2.jpeg"
+                alt="Dr. Mariano Barraza"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover transition-opacity duration-1000 ease-in-out"
+                style={{ opacity: showFirst ? 0 : 1 }}
+              />
+            </div>
           </div>
           <p className="mt-6 font-display text-xl text-navy-deep">Dr. Mariano Barraza</p>
           <p className="text-sm text-muted-foreground">
